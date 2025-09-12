@@ -202,6 +202,24 @@ Options:
 - `--skip_train` → render only test views
 - `--skip_test` → render only train views
 
+### Make video from rendered images
+Assumes your frames are in:
+- `output/ugv_side/train/ours_7000/gt/`
+- `output/ugv_side/train/ours_7000/renders/`
+- Make individual videos (same fps for both; change `-framerate` if you want):
+
+``` bash
+cd ~/Donkey3DGS
+
+ffmpeg -y -framerate 10 -pattern_type glob \
+  -i 'output/ugv_side/train/ours_7000/gt/*.png' \
+  -vf "format=yuv420p" gt.mp4
+
+ffmpeg -y -framerate 10 -pattern_type glob \
+  -i 'output/ugv_side/train/ours_7000/renders/*.png' \
+  -vf "format=yuv420p" renders.mp4
+```
+
 ---
 
 ## 📊 Monitoring
