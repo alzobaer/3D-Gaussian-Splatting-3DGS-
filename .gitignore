@@ -1,0 +1,133 @@
+# =========================
+# Donkey3DGS / 3DGS project
+# =========================
+
+# --- Workspace-local third-party repo (cloned upstream)
+# If you use it as a git submodule instead, remove these lines.
+gaussian-splatting/
+
+# --- Raw frames extracted from video
+frames/**
+!frames/.gitkeep
+
+# --- COLMAP artifacts (DB, sparse/dense recon, undistorted images, depth maps)
+colmap/**
+!colmap/.gitkeep
+# If you *do* want to version minimal outputs, comment the line above
+# and optionally un-ignore a few small files like:
+# !colmap/README.md
+
+# --- 3DGS training outputs, checkpoints, renders
+output/**
+!output/.gitkeep
+
+# --- Optional: large render assets inside output (kept out even if you un-ignore output/)
+output/**/*.ply
+output/**/*.mp4
+output/**/*.avi
+output/**/*.mov
+
+# =========================
+# Python / Conda / Notebooks
+# =========================
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.so
+*.dylib
+*.dll
+
+# Virtual/envs (prefer conda env outside repo)
+.env
+.venv
+env/
+venv/
+*.env
+
+# Jupyter
+.ipynb_checkpoints/
+.profile_default/
+.ipython/
+
+# Packaging / build
+build/
+dist/
+downloads/
+.eggs/
+*.egg-info/
+*.egg
+wheels/
+share/python-wheels/
+pip-wheel-metadata/
+*.manifest
+*.spec
+
+# Installer and logs
+miniconda.sh
+pip-log.txt
+pip-delete-this-directory.txt
+*.log
+logs/
+lightning_logs/
+runs/
+events.out.tfevents.*
+
+# =========================
+# CMake / Ninja / C++ / CUDA
+# =========================
+CMakeCache.txt
+CMakeFiles/
+CMakeScripts/
+cmake_install.cmake
+compile_commands.json
+CTestTestfile.cmake
+Makefile
+*_build/
+build.ninja
+*.ninja
+.ninja_deps
+.ninja_log
+
+# CUDA/obj intermediates
+*.o
+*.obj
+*.a
+*.lib
+*.la
+*.lo
+*.ptx
+*.cubin
+*.fatbin
+*.smod
+*.mod
+
+# =========================
+# Editors / OS cruft
+# =========================
+# VS Code / JetBrains
+.vscode/
+.vscode-*
+.idea/
+*.iml
+
+# OS junk
+.DS_Store
+.DS_Store?
+Thumbs.db
+Desktop.ini
+.Trashes
+._*
+
+# =========================
+# Media/cache (general)
+# =========================
+*.tmp
+*.temp
+*.cache
+.cache/
+
+
+
+
+# Tip: add empty .gitkeep files in frames/, colmap/, and output/ if you want those folders to exist in a fresh clone.
